@@ -4,6 +4,8 @@ import org.springframework.stereotype.Service;
 import sn.isi.l3gl.core.task_core.entite.Task;
 import sn.isi.l3gl.core.task_core.repository.TaskRepository;
 
+import java.util.List;
+
 @Service
 public class TaskService {
 
@@ -16,5 +18,10 @@ public class TaskService {
     // Version 0.0.1-SNAPSHOT
     public Task createTask(Task task) {
         return taskRepository.save(task);
+    }
+
+    // Ajout dans la Version 0.1.0-SNAPSHOT
+    public List<Task> listTasks() {
+        return taskRepository.findAll();
     }
 }
