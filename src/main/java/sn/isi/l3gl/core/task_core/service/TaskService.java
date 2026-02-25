@@ -32,4 +32,9 @@ public class TaskService {
         task.setStatus(newStatus);
         return taskRepository.save(task);
     }
+
+    // Ajout dans la Version 0.3.0-SNAPSHOT
+    public long countCompletedTasks() {
+        return taskRepository.countByStatus(TaskStatus.DONE);
+    }
 }
